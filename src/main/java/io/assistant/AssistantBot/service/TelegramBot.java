@@ -32,10 +32,11 @@ public class TelegramBot extends TelegramLongPollingBot {
         if(update.hasMessage() && update.getMessage().hasText()) {
             String messageText = update.getMessage().getText();
             long chatId = update.getMessage().getChatId();
+            final String userName = update.getMessage().getChat().getUserName();
 
             switch (messageText) {
                 case "/start":
-                    startCommandReceived(chatId, update.getMessage().getChat().getFirstName());
+                    startCommandReceived(chatId, update.getMessage().getChat().getFirstName(), userName);
                     break;
                 default:
                     sendMessage(chatId, "Sorry, I don't know this command.");
@@ -43,9 +44,10 @@ public class TelegramBot extends TelegramLongPollingBot {
         }
     }
 
-    private void startCommandReceived(long chatId, String userName) {
-        String answer = "Hi, " + userName + ", nice to meet you!";
+    private void startCommandReceived(long chatId, String firstName, String userName) {
+        String answer = "Hi, " + firstName + ", nice to meet you!";
         sendMessage(chatId, answer);
+        log.info("Message sent to user " + userName);
     }
 
     private void sendMessage(long chatId, String textToSend) {

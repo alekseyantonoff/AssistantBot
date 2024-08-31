@@ -1,5 +1,5 @@
 HELP.md
-application.properties
+application-local.properties
 maven-wrapper.properties
 mvnw
 mvnw.cmd
