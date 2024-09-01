@@ -3,6 +3,7 @@ application-local.properties
 maven-wrapper.properties
 mvnw
 mvnw.cmd
+app.log
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
