@@ -22,3 +22,5 @@ SHOW DATABASES</p>
 url = jdbc:mysql://localhost:3306/tgbot?allowPublicKeyRetrieval=true&useSSL=false<br>
 username = root<br>
 password = tgbot123</p>
+
+<p>Start docker-compose: docker-compose up</p>
